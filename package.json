@@ -20,7 +20,8 @@
   "homepage": "https://github.com/saodat-riskiyeva/day-78-online-shop-project#readme",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
