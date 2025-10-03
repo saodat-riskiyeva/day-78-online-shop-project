@@ -28,10 +28,10 @@ class User {
       address: this.address,
     });
   }
-}
 
-hasMatchingPassword(hashedPassword) {
-  return bcrypt.compare(this.password, hashedPassword);
+  hasMatchingPassword(hashedPassword) {
+    return bcrypt.compare(this.password, hashedPassword);
+  }
 }
 
 module.exports = User;
