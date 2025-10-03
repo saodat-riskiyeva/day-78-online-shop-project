@@ -31,9 +31,10 @@ function getLogin(req, res) {
 
 async function login(req, res) {
   const user = new User(req.body.email, req.body.password);
+  let existingUser;
 
   try {
-    const existingUser = await user.getUserWithSameEmail();
+    existingUser = await user.getUserWithSameEmail();
   } catch (error) {
     next(error);
     return;
