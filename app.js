@@ -9,6 +9,8 @@ const db = require("./data/database");
 const addCsfrTokenMiddleware = require("./middlewares/csfr-token");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 const authRoutes = require("./routes/auth.routes");
+const productRoutes = require("./routes/product.routes");
+const baseRoutes = require("./routes/base.routes");
 
 const app = express();
 
@@ -24,6 +26,8 @@ app.use(csrf());
 app.use(addCsfrTokenMiddleware);
 
 app.use(authRoutes);
+app.use(baseRoutes);
+app.use(productRoutes);
 
 app.use(errorHandlerMiddleware);
 
