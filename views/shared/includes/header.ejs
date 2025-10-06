@@ -4,6 +4,29 @@
   </div>
   <nav>
     <ul>
+      <li>
+        <% if (!locals.isAmin) { %>
+        <a href="/">Shop</a>
+        <a href="/cart">Cart</a>
+        <% } %>
+        
+        <% if (locals.isAuth && !locals.isAmin) { %>
+        <a href="/orders">Orders</a>
+        <% } %>
+        
+        <% if (locals.isAdmin) { %>
+        <a href="/admin/products">Manage Products</a>
+        <a href="/admin/orders">Manage Orders</a>
+        <% } %>
+
+        <% if (!locals.isAuth) { %>
+        <li>
+          <a href="/signup">Signup</a>
+          <a href="/login">Login</a>
+        </li>
+        <% } %>
+
+      </li>
       <% if (locals.isAuth) { %>
       <li>
         <form action="/logout" method="POST">
